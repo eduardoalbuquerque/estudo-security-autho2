@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.domain.Cliente;
 import com.example.demo.service.ClientService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class ClientController {
     public ClientController(ClientService ClientService){
         this.client = ClientService;
     }
-
+    @GetMapping
     public List<Cliente> listAll(){
         return this.client.listAll();
     }
